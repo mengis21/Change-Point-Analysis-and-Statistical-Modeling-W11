@@ -27,3 +27,7 @@ __MACOSX/
 
 # Node
 node_modules/
+
+# Dashboard build outputs
+dashboard/frontend/dist/
+dashboard/frontend/.vite/
