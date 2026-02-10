@@ -30,7 +30,13 @@ def load_brent_prices(path: str | Path | None = None) -> pd.DataFrame:
 
     df = pd.read_csv(csv_path)
     # Expected columns: Date, Price
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
+    # Primary format in the provided dataset: e.g. 20-May-87
+    parsed = pd.to_datetime(df["Date"], format="%d-%b-%y", errors="coerce")
+    # Fallback for any non-conforming rows (keeps behavior robust if format changes)
+    if parsed.isna().any():
+        parsed_fallback = pd.to_datetime(df.loc[parsed.isna(), "Date"], errors="coerce", dayfirst=True)
+        parsed.loc[parsed.isna()] = parsed_fallback
+    df["Date"] = parsed
     df = df.dropna(subset=["Date"]).sort_values("Date").reset_index(drop=True)
     df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
     df = df.dropna(subset=["Price"]).reset_index(drop=True)
