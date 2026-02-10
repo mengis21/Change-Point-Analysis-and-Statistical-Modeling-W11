@@ -30,4 +30,27 @@ pip install -r requirements.txt
 
 ## Dashboard (Task 3)
 
-The dashboard will live under `dashboard/` (Flask backend + React frontend) with instructions added when implemented.
+The dashboard lives under `dashboard/`:
+
+### Backend (Flask)
+
+```bash
+source .venv/bin/activate
+python dashboard/backend/app.py
+```
+
+API endpoints:
+- `/api/health`
+- `/api/prices?start=YYYY-MM-DD&end=YYYY-MM-DD`
+- `/api/events`
+- `/api/changepoint`
+
+### Frontend (React + Vite)
+
+```bash
+cd dashboard/frontend
+npm install
+npm run dev
+```
+
+Optional: set `VITE_API_BASE` (defaults to `http://localhost:8000`).
