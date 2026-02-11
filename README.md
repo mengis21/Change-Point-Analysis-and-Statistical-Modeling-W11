@@ -2,12 +2,6 @@
 
 This repository contains a Week 11 project analyzing how major geopolitical/economic events relate to structural breaks (change points) in Brent oil prices.
 
-## Repository rules (important)
-
-- The provided `Technical challenge/` folder is **local-only** guidance and is intentionally gitignored.
-- Interim/final report documents are **local-only** and are intentionally gitignored.
-- Work is implemented on one branch per task and merged into `main`.
-
 ## Project structure
 
 - `data/raw/` – raw data (Brent oil prices + curated events)
