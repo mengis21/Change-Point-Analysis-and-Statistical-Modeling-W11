@@ -67,7 +67,7 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: 'system-ui, Arial', padding: 16, maxWidth: 1100, margin: '0 auto' }}>
-      <h2>Brent Oil Price — Change Point Dashboard</h2>
+      <h2>Brent Oil Price - Change Point Dashboard</h2>
       <p style={{ marginTop: 0, color: '#444' }}>
         Explore Brent price history with curated events and a Bayesian change point estimate.
       </p>
@@ -152,7 +152,7 @@ export default function App() {
           <ul>
             {visibleEvents.map((ev) => (
               <li key={`${ev.event_date}-${ev.event_title}`}>
-                <b>{ev.event_date}</b> — {ev.event_title} ({ev.event_type})
+                <b>{ev.event_date}</b> - {ev.event_title} ({ev.event_type})
               </li>
             ))}
           </ul>
